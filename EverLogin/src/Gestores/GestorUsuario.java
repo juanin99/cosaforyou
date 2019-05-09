@@ -12,25 +12,24 @@ public class GestorUsuario
 	{
 		BBDD bbdd = new BBDD();
 		
-		ResultSet resultSet = bbdd.getResultSet("select * from usuario where nick = " + username);
-		try {
-			return new Usuario(resultSet.getString(1), resultSet.getString(2));
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return null;
+		String[][] table = bbdd.getTable("select * from usuario where nick = '" + username + "'", 2);
+		return new Usuario(table[0][0], table[0][1]);
 	}
 	
 	public static boolean userExists(String username)
 	{
 		BBDD bbdd = new BBDD();
 		
-		try {
-			ResultSet resultSet = bbdd.getResultSet("select * from usuario where nick = " + username);
-			if(resultSet.getString(1) == username) return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return false;
+		String[][] table = bbdd.getTable("select * from usuario where nick = '" + username + "'", 2);
+		if(table[table.length - 1][0].equals(username)) return true;
+		else return false;
+	}
+	
+	public static boolean passwordIsCorrect(String username, String hashPassword)
+	{
+		BBDD bbdd = new BBDD();
+		String[][] table = bbdd.getTable("select * from usuario where nick = '" + username + "'", 2);
+		if(table[table.length - 1][1].equals(hashPassword)) return true;
+		else return false;
 	}
 }
