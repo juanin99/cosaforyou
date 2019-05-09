@@ -1,6 +1,6 @@
 package Vista;
 
-import java.awt.Color;
+
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -95,6 +95,8 @@ public class Login extends JFrame {
 	public static void main(String args[]) 
 	{
 		Login mainWindow = new Login("EverLogin");
+		
+		
 		
 	}
 	
