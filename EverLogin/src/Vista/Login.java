@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 
@@ -19,7 +20,7 @@ public class Login extends JFrame {
 	private JLabel usuarioLabel;
 	private JLabel passLabel;
 	private JTextField usuarioText;
-	private JTextField passText;
+	private JPasswordField passText;
 	
 	
 	public Login(String title) {
@@ -35,7 +36,7 @@ public class Login extends JFrame {
         usuarioLabel =new JLabel("Usuario: ");  
         usuarioText = new JTextField(28);
         passLabel =new JLabel("Password: ");  
-        passText = new JTextField(28);
+        passText = new JPasswordField(28);
         aceptarButton = new JButton("Aceptar");
         registrarButton = new JButton("Registrar");
         
