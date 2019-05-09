@@ -1,5 +1,7 @@
 CREATE DATABASE coches;
 
+USE coches;
+
 CREATE TABLE car(
 	codigo INTEGER,
 	marca VARCHAR(20),
